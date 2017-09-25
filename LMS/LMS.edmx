@@ -1,0 +1,2580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LegalMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="LegalMSModelStoreContainer">
+          <EntitySet Name="Agent" EntityType="LegalMSModel.Store.Agent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Attachement" EntityType="LegalMSModel.Store.Attachement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Category" EntityType="LegalMSModel.Store.Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="City" EntityType="LegalMSModel.Store.City" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Complainant" EntityType="LegalMSModel.Store.Complainant" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Court" EntityType="LegalMSModel.Store.Court" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CourtSession" EntityType="LegalMSModel.Store.CourtSession" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Invited" EntityType="LegalMSModel.Store.Invited" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InvolvedPersonnel" EntityType="LegalMSModel.Store.InvolvedPersonnel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InvolvedUnits" EntityType="LegalMSModel.Store.InvolvedUnits" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LegalDocument" EntityType="LegalMSModel.Store.LegalDocument" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LegalPersonality" EntityType="LegalMSModel.Store.LegalPersonality" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Municipality" EntityType="LegalMSModel.Store.Municipality" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Person" EntityType="LegalMSModel.Store.Person" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Personnel" EntityType="LegalMSModel.Store.Personnel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonnelPost" EntityType="LegalMSModel.Store.PersonnelPost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Post" EntityType="LegalMSModel.Store.Post" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Province" EntityType="LegalMSModel.Store.Province" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="LegalMSModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RoleAccess" EntityType="LegalMSModel.Store.RoleAccess" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="LegalMSModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Unit" EntityType="LegalMSModel.Store.Unit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="LegalMSModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserRole" EntityType="LegalMSModel.Store.UserRole" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Agent_Person" Association="LegalMSModel.Store.FK_Agent_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Agent" EntitySet="Agent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachement_LegalDocument" Association="LegalMSModel.Store.FK_Attachement_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="Attachement" EntitySet="Attachement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Provinces" Association="LegalMSModel.Store.FK_City_Provinces">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complainant_LegalDocument" Association="LegalMSModel.Store.FK_Complainant_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="Complainant" EntitySet="Complainant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complainant_LegalPersonality" Association="LegalMSModel.Store.FK_Complainant_LegalPersonality">
+            <End Role="LegalPersonality" EntitySet="LegalPersonality" />
+            <End Role="Complainant" EntitySet="Complainant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complainant_Municipality" Association="LegalMSModel.Store.FK_Complainant_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="Complainant" EntitySet="Complainant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complainant_Person" Association="LegalMSModel.Store.FK_Complainant_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Complainant" EntitySet="Complainant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Court_City" Association="LegalMSModel.Store.FK_Court_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Court" EntitySet="Court" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Court_Provinces" Association="LegalMSModel.Store.FK_Court_Provinces">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="Court" EntitySet="Court" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourtSession_Agent" Association="LegalMSModel.Store.FK_CourtSession_Agent">
+            <End Role="Agent" EntitySet="Agent" />
+            <End Role="CourtSession" EntitySet="CourtSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourtSession_LegalDocument" Association="LegalMSModel.Store.FK_CourtSession_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="CourtSession" EntitySet="CourtSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invited_LegalDocument" Association="LegalMSModel.Store.FK_Invited_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="Invited" EntitySet="Invited" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invited_LegalPersonality" Association="LegalMSModel.Store.FK_Invited_LegalPersonality">
+            <End Role="LegalPersonality" EntitySet="LegalPersonality" />
+            <End Role="Invited" EntitySet="Invited" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invited_Municipality" Association="LegalMSModel.Store.FK_Invited_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="Invited" EntitySet="Invited" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invited_Person" Association="LegalMSModel.Store.FK_Invited_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Invited" EntitySet="Invited" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvolvedPersonnel_LegalDocument" Association="LegalMSModel.Store.FK_InvolvedPersonnel_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="InvolvedPersonnel" EntitySet="InvolvedPersonnel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvolvedPersonnel_Personnel" Association="LegalMSModel.Store.FK_InvolvedPersonnel_Personnel">
+            <End Role="Personnel" EntitySet="Personnel" />
+            <End Role="InvolvedPersonnel" EntitySet="InvolvedPersonnel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvolvedUnits_LegalDocument" Association="LegalMSModel.Store.FK_InvolvedUnits_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="InvolvedUnits" EntitySet="InvolvedUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvolvedUnits_Unit" Association="LegalMSModel.Store.FK_InvolvedUnits_Unit">
+            <End Role="Unit" EntitySet="Unit" />
+            <End Role="InvolvedUnits" EntitySet="InvolvedUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalDocument_Category" Association="LegalMSModel.Store.FK_LegalDocument_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalDocument_Court" Association="LegalMSModel.Store.FK_LegalDocument_Court">
+            <End Role="Court" EntitySet="Court" />
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalDocument_LegalDocument" Association="LegalMSModel.Store.FK_LegalDocument_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="LegalDocument1" EntitySet="LegalDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalDocument_Municipality" Association="LegalMSModel.Store.FK_LegalDocument_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalPersonality_City" Association="LegalMSModel.Store.FK_LegalPersonality_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="LegalPersonality" EntitySet="LegalPersonality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalPersonality_Municipality" Association="LegalMSModel.Store.FK_LegalPersonality_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="LegalPersonality" EntitySet="LegalPersonality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalPersonality_Provinces" Association="LegalMSModel.Store.FK_LegalPersonality_Provinces">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="LegalPersonality" EntitySet="LegalPersonality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Municipality_City" Association="LegalMSModel.Store.FK_Municipality_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Municipality" EntitySet="Municipality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Municipality_Provinces" Association="LegalMSModel.Store.FK_Municipality_Provinces">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="Municipality" EntitySet="Municipality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_City" Association="LegalMSModel.Store.FK_Person_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Municipality" Association="LegalMSModel.Store.FK_Person_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Provinces" Association="LegalMSModel.Store.FK_Person_Provinces">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personnel_Municipality" Association="LegalMSModel.Store.FK_Personnel_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="Personnel" EntitySet="Personnel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personnel_Person" Association="LegalMSModel.Store.FK_Personnel_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Personnel" EntitySet="Personnel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonnelPost_Person" Association="LegalMSModel.Store.FK_PersonnelPost_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonnelPost" EntitySet="PersonnelPost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonnelPost_Personnel" Association="LegalMSModel.Store.FK_PersonnelPost_Personnel">
+            <End Role="Personnel" EntitySet="Personnel" />
+            <End Role="PersonnelPost" EntitySet="PersonnelPost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonnelPost_Post" Association="LegalMSModel.Store.FK_PersonnelPost_Post">
+            <End Role="Post" EntitySet="Post" />
+            <End Role="PersonnelPost" EntitySet="PersonnelPost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleAccess_Role" Association="LegalMSModel.Store.FK_RoleAccess_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="RoleAccess" EntitySet="RoleAccess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Person" Association="LegalMSModel.Store.FK_User_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_Role" Association="LegalMSModel.Store.FK_UserRole_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_User" Association="LegalMSModel.Store.FK_UserRole_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Agent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonRef" Type="int" Nullable="false" />
+          <Property Name="Rank" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Attachement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="2048" />
+          <Property Name="LegalDocumentRef" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Title" Type="nvarchar" MaxLength="35" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="PrefixCode" Type="varchar" MaxLength="5" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="ProvinceRef" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Complainant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonRef" Type="int" />
+          <Property Name="LegalPersonalityRef" Type="int" />
+          <Property Name="MunicipalityRef" Type="int" />
+          <Property Name="LegalDocumentRef" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Court">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="ProvinceRef" Type="int" Nullable="false" />
+          <Property Name="CityRef" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="Type" Type="nvarchar" MaxLength="35" />
+          <Property Name="PostalCode" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="CourtSession">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LegalDocumentRef" Type="int" Nullable="false" />
+          <Property Name="AgentRef" Type="int" Nullable="false" />
+          <Property Name="CourtDate" Type="datetime" Nullable="false" />
+          <Property Name="RefereToExpertDate" Type="datetime" />
+          <Property Name="ExpertName" Type="nvarchar" MaxLength="25" />
+          <Property Name="ExpertVerdictAnnounceDate" Type="datetime" />
+          <Property Name="FinalVerdict" Type="nvarchar(max)" />
+          <Property Name="FinalVerdictDate" Type="datetime" />
+          <Property Name="ProtestVerdictDate" Type="datetime" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="ReconsiderVote" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Invited">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonRef" Type="int" />
+          <Property Name="LegalPersonalityRef" Type="int" />
+          <Property Name="MunicipalityRef" Type="int" />
+          <Property Name="LegalDocumentRef" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InvolvedPersonnel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="PersonRef" Type="int" Nullable="false" />
+          <Property Name="LegalDocumentRef" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InvolvedUnits">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UnitRef" Type="int" Nullable="false" />
+          <Property Name="LegalDocumentRef" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LegalDocument">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Number" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="PrepareDate" Type="datetime" Nullable="false" />
+          <Property Name="ArchiveNo" Type="nvarchar" MaxLength="30" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="WorkflueStatus" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="MunicipalityRef" Type="int" Nullable="false" />
+          <Property Name="CourtRef" Type="int" Nullable="false" />
+          <Property Name="Summary" Type="nvarchar" MaxLength="2000" />
+          <Property Name="AnnounceDate" Type="datetime" Nullable="false" />
+          <Property Name="Confirmer" Type="nvarchar" MaxLength="30" />
+          <Property Name="ParentDocRef" Type="int" />
+          <Property Name="Reciever" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="IndicatorRegisterDate" Type="datetime" />
+          <Property Name="CourtRoomDate" Type="datetime" Nullable="false" />
+          <Property Name="AnnounceNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="AnnounceToAgentDate" Type="datetime" />
+          <Property Name="CategoryRef" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="LegalPersonality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="ProvinceRef" Type="int" Nullable="false" />
+          <Property Name="CityRef" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="Type" Type="nvarchar" MaxLength="25" />
+          <Property Name="MunicipalityRef" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Municipality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="ProvinceRef" Type="int" Nullable="false" />
+          <Property Name="CityRef" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="PostalCode" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="NationalCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="Mobile" Type="varchar" MaxLength="11" />
+          <Property Name="ProvinceRef" Type="int" Nullable="false" />
+          <Property Name="CityRef" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Type" Type="nvarchar" MaxLength="25" />
+          <Property Name="OfficeRef" Type="int" />
+        </EntityType>
+        <EntityType Name="Personnel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonRef" Type="int" Nullable="false" />
+          <Property Name="OfficeRef" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonnelPost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonRef" Type="int" Nullable="false" />
+          <Property Name="PostRef" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Province">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="PrefixCode" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="RoleAccess">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleRef" Type="int" Nullable="false" />
+          <Property Name="PageUrl" Type="nvarchar" Nullable="false" MaxLength="2048" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Pass" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="PersonRef" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserRef" Type="int" Nullable="false" />
+          <Property Name="RoleRef" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Agent_Person">
+          <End Role="Person" Type="LegalMSModel.Store.Person" Multiplicity="1" />
+          <End Role="Agent" Type="LegalMSModel.Store.Agent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Agent">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachement_LegalDocument">
+          <End Role="LegalDocument" Type="LegalMSModel.Store.LegalDocument" Multiplicity="1" />
+          <End Role="Attachement" Type="LegalMSModel.Store.Attachement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Attachement">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Provinces">
+          <End Role="Province" Type="LegalMSModel.Store.Province" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="City" Type="LegalMSModel.Store.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="ProvinceRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complainant_LegalDocument">
+          <End Role="LegalDocument" Type="LegalMSModel.Store.LegalDocument" Multiplicity="1" />
+          <End Role="Complainant" Type="LegalMSModel.Store.Complainant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complainant">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complainant_LegalPersonality">
+          <End Role="LegalPersonality" Type="LegalMSModel.Store.LegalPersonality" Multiplicity="0..1" />
+          <End Role="Complainant" Type="LegalMSModel.Store.Complainant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalPersonality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complainant">
+              <PropertyRef Name="LegalPersonalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complainant_Municipality">
+          <End Role="Municipality" Type="LegalMSModel.Store.Municipality" Multiplicity="0..1" />
+          <End Role="Complainant" Type="LegalMSModel.Store.Complainant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complainant">
+              <PropertyRef Name="MunicipalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complainant_Person">
+          <End Role="Person" Type="LegalMSModel.Store.Person" Multiplicity="0..1" />
+          <End Role="Complainant" Type="LegalMSModel.Store.Complainant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complainant">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Court_City">
+          <End Role="City" Type="LegalMSModel.Store.City" Multiplicity="1" />
+          <End Role="Court" Type="LegalMSModel.Store.Court" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Court">
+              <PropertyRef Name="CityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Court_Provinces">
+          <End Role="Province" Type="LegalMSModel.Store.Province" Multiplicity="1" />
+          <End Role="Court" Type="LegalMSModel.Store.Court" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Court">
+              <PropertyRef Name="ProvinceRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourtSession_Agent">
+          <End Role="Agent" Type="LegalMSModel.Store.Agent" Multiplicity="1" />
+          <End Role="CourtSession" Type="LegalMSModel.Store.CourtSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourtSession">
+              <PropertyRef Name="AgentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourtSession_LegalDocument">
+          <End Role="LegalDocument" Type="LegalMSModel.Store.LegalDocument" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CourtSession" Type="LegalMSModel.Store.CourtSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourtSession">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invited_LegalDocument">
+          <End Role="LegalDocument" Type="LegalMSModel.Store.LegalDocument" Multiplicity="1" />
+          <End Role="Invited" Type="LegalMSModel.Store.Invited" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invited">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invited_LegalPersonality">
+          <End Role="LegalPersonality" Type="LegalMSModel.Store.LegalPersonality" Multiplicity="0..1" />
+          <End Role="Invited" Type="LegalMSModel.Store.Invited" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalPersonality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invited">
+              <PropertyRef Name="LegalPersonalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invited_Municipality">
+          <End Role="Municipality" Type="LegalMSModel.Store.Municipality" Multiplicity="0..1" />
+          <End Role="Invited" Type="LegalMSModel.Store.Invited" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invited">
+              <PropertyRef Name="MunicipalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invited_Person">
+          <End Role="Person" Type="LegalMSModel.Store.Person" Multiplicity="0..1" />
+          <End Role="Invited" Type="LegalMSModel.Store.Invited" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invited">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvolvedPersonnel_LegalDocument">
+          <End Role="LegalDocument" Type="LegalMSModel.Store.LegalDocument" Multiplicity="1" />
+          <End Role="InvolvedPersonnel" Type="LegalMSModel.Store.InvolvedPersonnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvolvedPersonnel">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvolvedPersonnel_Personnel">
+          <End Role="Personnel" Type="LegalMSModel.Store.Personnel" Multiplicity="1" />
+          <End Role="InvolvedPersonnel" Type="LegalMSModel.Store.InvolvedPersonnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personnel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvolvedPersonnel">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvolvedUnits_LegalDocument">
+          <End Role="LegalDocument" Type="LegalMSModel.Store.LegalDocument" Multiplicity="1" />
+          <End Role="InvolvedUnits" Type="LegalMSModel.Store.InvolvedUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvolvedUnits">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvolvedUnits_Unit">
+          <End Role="Unit" Type="LegalMSModel.Store.Unit" Multiplicity="1" />
+          <End Role="InvolvedUnits" Type="LegalMSModel.Store.InvolvedUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvolvedUnits">
+              <PropertyRef Name="UnitRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalDocument_Category">
+          <End Role="Category" Type="LegalMSModel.Store.Category" Multiplicity="1" />
+          <End Role="LegalDocument" Type="LegalMSModel.Store.LegalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalDocument">
+              <PropertyRef Name="CategoryRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalDocument_Court">
+          <End Role="Court" Type="LegalMSModel.Store.Court" Multiplicity="1" />
+          <End Role="LegalDocument" Type="LegalMSModel.Store.LegalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Court">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalDocument">
+              <PropertyRef Name="CourtRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalDocument_LegalDocument">
+          <End Role="LegalDocument" Type="LegalMSModel.Store.LegalDocument" Multiplicity="0..1" />
+          <End Role="LegalDocument1" Type="LegalMSModel.Store.LegalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalDocument1">
+              <PropertyRef Name="ParentDocRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalDocument_Municipality">
+          <End Role="Municipality" Type="LegalMSModel.Store.Municipality" Multiplicity="1" />
+          <End Role="LegalDocument" Type="LegalMSModel.Store.LegalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalDocument">
+              <PropertyRef Name="MunicipalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalPersonality_City">
+          <End Role="City" Type="LegalMSModel.Store.City" Multiplicity="1" />
+          <End Role="LegalPersonality" Type="LegalMSModel.Store.LegalPersonality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalPersonality">
+              <PropertyRef Name="CityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalPersonality_Municipality">
+          <End Role="Municipality" Type="LegalMSModel.Store.Municipality" Multiplicity="1" />
+          <End Role="LegalPersonality" Type="LegalMSModel.Store.LegalPersonality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalPersonality">
+              <PropertyRef Name="MunicipalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalPersonality_Provinces">
+          <End Role="Province" Type="LegalMSModel.Store.Province" Multiplicity="1" />
+          <End Role="LegalPersonality" Type="LegalMSModel.Store.LegalPersonality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalPersonality">
+              <PropertyRef Name="ProvinceRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Municipality_City">
+          <End Role="City" Type="LegalMSModel.Store.City" Multiplicity="1" />
+          <End Role="Municipality" Type="LegalMSModel.Store.Municipality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Municipality">
+              <PropertyRef Name="CityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Municipality_Provinces">
+          <End Role="Province" Type="LegalMSModel.Store.Province" Multiplicity="1" />
+          <End Role="Municipality" Type="LegalMSModel.Store.Municipality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Municipality">
+              <PropertyRef Name="ProvinceRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_City">
+          <End Role="City" Type="LegalMSModel.Store.City" Multiplicity="1" />
+          <End Role="Person" Type="LegalMSModel.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="CityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Municipality">
+          <End Role="Municipality" Type="LegalMSModel.Store.Municipality" Multiplicity="0..1" />
+          <End Role="Person" Type="LegalMSModel.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="OfficeRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Provinces">
+          <End Role="Province" Type="LegalMSModel.Store.Province" Multiplicity="1" />
+          <End Role="Person" Type="LegalMSModel.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="ProvinceRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personnel_Municipality">
+          <End Role="Municipality" Type="LegalMSModel.Store.Municipality" Multiplicity="1" />
+          <End Role="Personnel" Type="LegalMSModel.Store.Personnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personnel">
+              <PropertyRef Name="OfficeRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personnel_Person">
+          <End Role="Person" Type="LegalMSModel.Store.Person" Multiplicity="1" />
+          <End Role="Personnel" Type="LegalMSModel.Store.Personnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personnel">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonnelPost_Person">
+          <End Role="Person" Type="LegalMSModel.Store.Person" Multiplicity="1" />
+          <End Role="PersonnelPost" Type="LegalMSModel.Store.PersonnelPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonnelPost">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonnelPost_Personnel">
+          <End Role="Personnel" Type="LegalMSModel.Store.Personnel" Multiplicity="1" />
+          <End Role="PersonnelPost" Type="LegalMSModel.Store.PersonnelPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personnel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonnelPost">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonnelPost_Post">
+          <End Role="Post" Type="LegalMSModel.Store.Post" Multiplicity="1" />
+          <End Role="PersonnelPost" Type="LegalMSModel.Store.PersonnelPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonnelPost">
+              <PropertyRef Name="PostRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleAccess_Role">
+          <End Role="Role" Type="LegalMSModel.Store.Role" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RoleAccess" Type="LegalMSModel.Store.RoleAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RoleAccess">
+              <PropertyRef Name="RoleRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Person">
+          <End Role="Person" Type="LegalMSModel.Store.Person" Multiplicity="1" />
+          <End Role="User" Type="LegalMSModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_Role">
+          <End Role="Role" Type="LegalMSModel.Store.Role" Multiplicity="1" />
+          <End Role="UserRole" Type="LegalMSModel.Store.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="RoleRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_User">
+          <End Role="User" Type="LegalMSModel.Store.User" Multiplicity="1" />
+          <End Role="UserRole" Type="LegalMSModel.Store.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_checkLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pass" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_getComplainantsInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_GetLegalDocs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MunicipalityId" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="nvarchar" Mode="In" />
+          <Parameter Name="Number" Type="nvarchar" Mode="In" />
+          <Parameter Name="Summary" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_getLegalPersonalities" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MunicipalityId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_getUserInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="nvarchar" Mode="In" />
+          <Parameter Name="Token" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_insertAttachement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Url" Type="varchar" Mode="In" />
+          <Parameter Name="LegalDocumentId" Type="int" Mode="In" />
+          <Parameter Name="Type" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_insertCompainant" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LegalDocumentRef" Type="int" Mode="In" />
+          <Parameter Name="PersonRef" Type="int" Mode="In" />
+          <Parameter Name="LegalPersonalityRef" Type="int" Mode="In" />
+          <Parameter Name="MunicipalityRef" Type="int" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_insertLegalPersonality" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="ProvinceId" Type="int" Mode="In" />
+          <Parameter Name="CityId" Type="int" Mode="In" />
+          <Parameter Name="Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Type" Type="nvarchar" Mode="In" />
+          <Parameter Name="MunicipalityId" Type="int" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="uspGetPersons" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OfficeId" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LegalMSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LMSEntitiy" p1:LazyLoadingEnabled="true">
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(LegalMSModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(LegalMSModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="usp_checkLogin" ReturnType="Collection(LegalMSModel.usp_checkLogin_Result1)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_checkLogin1" ReturnType="Collection(LegalMSModel.usp_checkLogin1_Result)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_getUserInfo" ReturnType="Collection(LegalMSModel.usp_getUserInfo_Result)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="uspGetPersons" ReturnType="Collection(LegalMSModel.uspGetPersons_Result)">
+          <Parameter Name="OfficeId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_getComplainantsInfo" ReturnType="Collection(LegalMSModel.usp_getComplainantsInfo_Result)" />
+          <EntitySet Name="Agent" EntityType="LegalMSModel.Agent" />
+          <EntitySet Name="Attachement" EntityType="LegalMSModel.Attachement" />
+          <EntitySet Name="Category" EntityType="LegalMSModel.Category" />
+          <EntitySet Name="City" EntityType="LegalMSModel.City" />
+          <EntitySet Name="Complainant" EntityType="LegalMSModel.Complainant" />
+          <EntitySet Name="Court" EntityType="LegalMSModel.Court" />
+          <EntitySet Name="CourtSession" EntityType="LegalMSModel.CourtSession" />
+          <EntitySet Name="Invited" EntityType="LegalMSModel.Invited" />
+          <EntitySet Name="InvolvedPersonnel" EntityType="LegalMSModel.InvolvedPersonnel" />
+          <EntitySet Name="InvolvedUnits" EntityType="LegalMSModel.InvolvedUnits" />
+          <EntitySet Name="LegalDocument" EntityType="LegalMSModel.LegalDocument" />
+          <EntitySet Name="LegalPersonality" EntityType="LegalMSModel.LegalPersonality" />
+          <EntitySet Name="Municipality" EntityType="LegalMSModel.Municipality" />
+          <EntitySet Name="Person" EntityType="LegalMSModel.Person" />
+          <EntitySet Name="Personnel" EntityType="LegalMSModel.Personnel" />
+          <EntitySet Name="PersonnelPost" EntityType="LegalMSModel.PersonnelPost" />
+          <EntitySet Name="Post" EntityType="LegalMSModel.Post" />
+          <EntitySet Name="Province" EntityType="LegalMSModel.Province" />
+          <EntitySet Name="Role" EntityType="LegalMSModel.Role" />
+          <EntitySet Name="RoleAccess" EntityType="LegalMSModel.RoleAccess" />
+          <EntitySet Name="sysdiagrams" EntityType="LegalMSModel.sysdiagrams" />
+          <EntitySet Name="Unit" EntityType="LegalMSModel.Unit" />
+          <EntitySet Name="User" EntityType="LegalMSModel.User" />
+          <EntitySet Name="UserRole" EntityType="LegalMSModel.UserRole" />
+          <AssociationSet Name="FK_Agent_Person" Association="LegalMSModel.FK_Agent_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Agent" EntitySet="Agent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourtSession_Agent" Association="LegalMSModel.FK_CourtSession_Agent">
+            <End Role="Agent" EntitySet="Agent" />
+            <End Role="CourtSession" EntitySet="CourtSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachement_LegalDocument" Association="LegalMSModel.FK_Attachement_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="Attachement" EntitySet="Attachement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalDocument_Category" Association="LegalMSModel.FK_LegalDocument_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Provinces" Association="LegalMSModel.FK_City_Provinces">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Court_City" Association="LegalMSModel.FK_Court_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Court" EntitySet="Court" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalPersonality_City" Association="LegalMSModel.FK_LegalPersonality_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="LegalPersonality" EntitySet="LegalPersonality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Municipality_City" Association="LegalMSModel.FK_Municipality_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Municipality" EntitySet="Municipality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_City" Association="LegalMSModel.FK_Person_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complainant_LegalDocument" Association="LegalMSModel.FK_Complainant_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="Complainant" EntitySet="Complainant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complainant_LegalPersonality" Association="LegalMSModel.FK_Complainant_LegalPersonality">
+            <End Role="LegalPersonality" EntitySet="LegalPersonality" />
+            <End Role="Complainant" EntitySet="Complainant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complainant_Municipality" Association="LegalMSModel.FK_Complainant_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="Complainant" EntitySet="Complainant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complainant_Person" Association="LegalMSModel.FK_Complainant_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Complainant" EntitySet="Complainant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Court_Provinces" Association="LegalMSModel.FK_Court_Provinces">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="Court" EntitySet="Court" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalDocument_Court" Association="LegalMSModel.FK_LegalDocument_Court">
+            <End Role="Court" EntitySet="Court" />
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourtSession_LegalDocument" Association="LegalMSModel.FK_CourtSession_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="CourtSession" EntitySet="CourtSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invited_LegalDocument" Association="LegalMSModel.FK_Invited_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="Invited" EntitySet="Invited" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invited_LegalPersonality" Association="LegalMSModel.FK_Invited_LegalPersonality">
+            <End Role="LegalPersonality" EntitySet="LegalPersonality" />
+            <End Role="Invited" EntitySet="Invited" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invited_Municipality" Association="LegalMSModel.FK_Invited_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="Invited" EntitySet="Invited" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invited_Person" Association="LegalMSModel.FK_Invited_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Invited" EntitySet="Invited" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvolvedPersonnel_LegalDocument" Association="LegalMSModel.FK_InvolvedPersonnel_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="InvolvedPersonnel" EntitySet="InvolvedPersonnel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvolvedPersonnel_Personnel" Association="LegalMSModel.FK_InvolvedPersonnel_Personnel">
+            <End Role="Personnel" EntitySet="Personnel" />
+            <End Role="InvolvedPersonnel" EntitySet="InvolvedPersonnel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvolvedUnits_LegalDocument" Association="LegalMSModel.FK_InvolvedUnits_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="InvolvedUnits" EntitySet="InvolvedUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvolvedUnits_Unit" Association="LegalMSModel.FK_InvolvedUnits_Unit">
+            <End Role="Unit" EntitySet="Unit" />
+            <End Role="InvolvedUnits" EntitySet="InvolvedUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalDocument_LegalDocument" Association="LegalMSModel.FK_LegalDocument_LegalDocument">
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+            <End Role="LegalDocument1" EntitySet="LegalDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalDocument_Municipality" Association="LegalMSModel.FK_LegalDocument_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="LegalDocument" EntitySet="LegalDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalPersonality_Municipality" Association="LegalMSModel.FK_LegalPersonality_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="LegalPersonality" EntitySet="LegalPersonality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalPersonality_Provinces" Association="LegalMSModel.FK_LegalPersonality_Provinces">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="LegalPersonality" EntitySet="LegalPersonality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Municipality_Provinces" Association="LegalMSModel.FK_Municipality_Provinces">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="Municipality" EntitySet="Municipality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Municipality" Association="LegalMSModel.FK_Person_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personnel_Municipality" Association="LegalMSModel.FK_Personnel_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="Personnel" EntitySet="Personnel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Provinces" Association="LegalMSModel.FK_Person_Provinces">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personnel_Person" Association="LegalMSModel.FK_Personnel_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Personnel" EntitySet="Personnel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonnelPost_Person" Association="LegalMSModel.FK_PersonnelPost_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonnelPost" EntitySet="PersonnelPost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Person" Association="LegalMSModel.FK_User_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonnelPost_Personnel" Association="LegalMSModel.FK_PersonnelPost_Personnel">
+            <End Role="Personnel" EntitySet="Personnel" />
+            <End Role="PersonnelPost" EntitySet="PersonnelPost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonnelPost_Post" Association="LegalMSModel.FK_PersonnelPost_Post">
+            <End Role="Post" EntitySet="Post" />
+            <End Role="PersonnelPost" EntitySet="PersonnelPost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleAccess_Role" Association="LegalMSModel.FK_RoleAccess_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="RoleAccess" EntitySet="RoleAccess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_Role" Association="LegalMSModel.FK_UserRole_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_User" Association="LegalMSModel.FK_UserRole_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <FunctionImport Name="usp_GetLegalDocs" ReturnType="Collection(LegalMSModel.usp_GetLegalDocs_Result)">
+            <Parameter Name="MunicipalityId" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Number" Mode="In" Type="String" />
+            <Parameter Name="Summary" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_getLegalPersonalities" ReturnType="Collection(LegalMSModel.usp_getLegalPersonalities_Result)">
+            <Parameter Name="MunicipalityId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_insertAttachement">
+            <Parameter Name="Url" Mode="In" Type="String" />
+            <Parameter Name="LegalDocumentId" Mode="In" Type="Int32" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_insertCompainant">
+            <Parameter Name="LegalDocumentRef" Mode="In" Type="Int32" />
+            <Parameter Name="PersonRef" Mode="In" Type="Int32" />
+            <Parameter Name="LegalPersonalityRef" Mode="In" Type="Int32" />
+            <Parameter Name="MunicipalityRef" Mode="In" Type="Int32" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_insertLegalPersonality">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="ProvinceId" Mode="In" Type="Int32" />
+            <Parameter Name="CityId" Mode="In" Type="Int32" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="MunicipalityId" Mode="In" Type="Int32" />
+            <Parameter Name="ID" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="usp_checkLogin_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="PersonRef" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="usp_checkLogin1_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="PersonRef" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="usp_checkLogin_Result1">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="PersonRef" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="usp_getUserInfo_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="25" />
+          <Property Type="Int32" Name="OfficeId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="25" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="uspGetPersons_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="NationalCode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="Expr1" Nullable="false" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="usp_getComplainantsInfo_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="LegalPersonalityName" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="MunicipalityName" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <EntityType Name="Agent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PersonRef" Nullable="false" />
+          <Property Type="Byte" Name="Rank" />
+          <NavigationProperty Name="Person" Relationship="LegalMSModel.FK_Agent_Person" FromRole="Agent" ToRole="Person" />
+          <NavigationProperty Name="CourtSession" Relationship="LegalMSModel.FK_CourtSession_Agent" FromRole="Agent" ToRole="CourtSession" />
+        </EntityType>
+        <EntityType Name="Attachement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Url" Nullable="false" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LegalDocumentRef" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Title" MaxLength="35" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LegalDocument" Relationship="LegalMSModel.FK_Attachement_LegalDocument" FromRole="Attachement" ToRole="LegalDocument" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notes" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LegalDocument" Relationship="LegalMSModel.FK_LegalDocument_Category" FromRole="Category" ToRole="LegalDocument" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="PrefixCode" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ProvinceRef" Nullable="false" />
+          <NavigationProperty Name="Province" Relationship="LegalMSModel.FK_City_Provinces" FromRole="City" ToRole="Province" />
+          <NavigationProperty Name="Court" Relationship="LegalMSModel.FK_Court_City" FromRole="City" ToRole="Court" />
+          <NavigationProperty Name="LegalPersonality" Relationship="LegalMSModel.FK_LegalPersonality_City" FromRole="City" ToRole="LegalPersonality" />
+          <NavigationProperty Name="Municipality" Relationship="LegalMSModel.FK_Municipality_City" FromRole="City" ToRole="Municipality" />
+          <NavigationProperty Name="Person" Relationship="LegalMSModel.FK_Person_City" FromRole="City" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Complainant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PersonRef" />
+          <Property Type="Int32" Name="LegalPersonalityRef" />
+          <Property Type="Int32" Name="MunicipalityRef" />
+          <Property Type="Int32" Name="LegalDocumentRef" Nullable="false" />
+          <NavigationProperty Name="LegalDocument" Relationship="LegalMSModel.FK_Complainant_LegalDocument" FromRole="Complainant" ToRole="LegalDocument" />
+          <NavigationProperty Name="LegalPersonality" Relationship="LegalMSModel.FK_Complainant_LegalPersonality" FromRole="Complainant" ToRole="LegalPersonality" />
+          <NavigationProperty Name="Municipality" Relationship="LegalMSModel.FK_Complainant_Municipality" FromRole="Complainant" ToRole="Municipality" />
+          <NavigationProperty Name="Person" Relationship="LegalMSModel.FK_Complainant_Person" FromRole="Complainant" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Court">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ProvinceRef" Nullable="false" />
+          <Property Type="Int32" Name="CityRef" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Type" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostalCode" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="City" Relationship="LegalMSModel.FK_Court_City" FromRole="Court" ToRole="City" />
+          <NavigationProperty Name="Province" Relationship="LegalMSModel.FK_Court_Provinces" FromRole="Court" ToRole="Province" />
+          <NavigationProperty Name="LegalDocument" Relationship="LegalMSModel.FK_LegalDocument_Court" FromRole="Court" ToRole="LegalDocument" />
+        </EntityType>
+        <EntityType Name="CourtSession">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LegalDocumentRef" Nullable="false" />
+          <Property Type="Int32" Name="AgentRef" Nullable="false" />
+          <Property Type="DateTime" Name="CourtDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="RefereToExpertDate" Precision="3" />
+          <Property Type="String" Name="ExpertName" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ExpertVerdictAnnounceDate" Precision="3" />
+          <Property Type="String" Name="FinalVerdict" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FinalVerdictDate" Precision="3" />
+          <Property Type="DateTime" Name="ProtestVerdictDate" Precision="3" />
+          <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReconsiderVote" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Agent" Relationship="LegalMSModel.FK_CourtSession_Agent" FromRole="CourtSession" ToRole="Agent" />
+          <NavigationProperty Name="LegalDocument" Relationship="LegalMSModel.FK_CourtSession_LegalDocument" FromRole="CourtSession" ToRole="LegalDocument" />
+        </EntityType>
+        <EntityType Name="Invited">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PersonRef" />
+          <Property Type="Int32" Name="LegalPersonalityRef" />
+          <Property Type="Int32" Name="MunicipalityRef" />
+          <Property Type="Int32" Name="LegalDocumentRef" Nullable="false" />
+          <NavigationProperty Name="LegalDocument" Relationship="LegalMSModel.FK_Invited_LegalDocument" FromRole="Invited" ToRole="LegalDocument" />
+          <NavigationProperty Name="LegalPersonality" Relationship="LegalMSModel.FK_Invited_LegalPersonality" FromRole="Invited" ToRole="LegalPersonality" />
+          <NavigationProperty Name="Municipality" Relationship="LegalMSModel.FK_Invited_Municipality" FromRole="Invited" ToRole="Municipality" />
+          <NavigationProperty Name="Person" Relationship="LegalMSModel.FK_Invited_Person" FromRole="Invited" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="InvolvedPersonnel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="PersonRef" Nullable="false" />
+          <Property Type="Int32" Name="LegalDocumentRef" Nullable="false" />
+          <NavigationProperty Name="LegalDocument" Relationship="LegalMSModel.FK_InvolvedPersonnel_LegalDocument" FromRole="InvolvedPersonnel" ToRole="LegalDocument" />
+          <NavigationProperty Name="Personnel" Relationship="LegalMSModel.FK_InvolvedPersonnel_Personnel" FromRole="InvolvedPersonnel" ToRole="Personnel" />
+        </EntityType>
+        <EntityType Name="InvolvedUnits">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UnitRef" Nullable="false" />
+          <Property Type="Int32" Name="LegalDocumentRef" Nullable="false" />
+          <NavigationProperty Name="LegalDocument" Relationship="LegalMSModel.FK_InvolvedUnits_LegalDocument" FromRole="InvolvedUnits" ToRole="LegalDocument" />
+          <NavigationProperty Name="Unit" Relationship="LegalMSModel.FK_InvolvedUnits_Unit" FromRole="InvolvedUnits" ToRole="Unit" />
+        </EntityType>
+        <EntityType Name="LegalDocument">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Number" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PrepareDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="ArchiveNo" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WorkflueStatus" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Cost" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="MunicipalityRef" Nullable="false" />
+          <Property Type="Int32" Name="CourtRef" Nullable="false" />
+          <Property Type="String" Name="Summary" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="AnnounceDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Confirmer" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ParentDocRef" />
+          <Property Type="String" Name="Reciever" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="IndicatorRegisterDate" Precision="3" />
+          <Property Type="DateTime" Name="CourtRoomDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="AnnounceNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="AnnounceToAgentDate" Precision="3" />
+          <Property Type="Int32" Name="CategoryRef" Nullable="false" />
+          <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Attachement" Relationship="LegalMSModel.FK_Attachement_LegalDocument" FromRole="LegalDocument" ToRole="Attachement" />
+          <NavigationProperty Name="Category" Relationship="LegalMSModel.FK_LegalDocument_Category" FromRole="LegalDocument" ToRole="Category" />
+          <NavigationProperty Name="Complainant" Relationship="LegalMSModel.FK_Complainant_LegalDocument" FromRole="LegalDocument" ToRole="Complainant" />
+          <NavigationProperty Name="Court" Relationship="LegalMSModel.FK_LegalDocument_Court" FromRole="LegalDocument" ToRole="Court" />
+          <NavigationProperty Name="CourtSession" Relationship="LegalMSModel.FK_CourtSession_LegalDocument" FromRole="LegalDocument" ToRole="CourtSession" />
+          <NavigationProperty Name="Invited" Relationship="LegalMSModel.FK_Invited_LegalDocument" FromRole="LegalDocument" ToRole="Invited" />
+          <NavigationProperty Name="InvolvedPersonnel" Relationship="LegalMSModel.FK_InvolvedPersonnel_LegalDocument" FromRole="LegalDocument" ToRole="InvolvedPersonnel" />
+          <NavigationProperty Name="InvolvedUnits" Relationship="LegalMSModel.FK_InvolvedUnits_LegalDocument" FromRole="LegalDocument" ToRole="InvolvedUnits" />
+          <NavigationProperty Name="LegalDocument1" Relationship="LegalMSModel.FK_LegalDocument_LegalDocument" FromRole="LegalDocument" ToRole="LegalDocument1" />
+          <NavigationProperty Name="LegalDocument2" Relationship="LegalMSModel.FK_LegalDocument_LegalDocument" FromRole="LegalDocument1" ToRole="LegalDocument" />
+          <NavigationProperty Name="Municipality" Relationship="LegalMSModel.FK_LegalDocument_Municipality" FromRole="LegalDocument" ToRole="Municipality" />
+        </EntityType>
+        <EntityType Name="LegalPersonality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ProvinceRef" Nullable="false" />
+          <Property Type="Int32" Name="CityRef" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Type" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MunicipalityRef" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="LegalMSModel.FK_LegalPersonality_City" FromRole="LegalPersonality" ToRole="City" />
+          <NavigationProperty Name="Complainant" Relationship="LegalMSModel.FK_Complainant_LegalPersonality" FromRole="LegalPersonality" ToRole="Complainant" />
+          <NavigationProperty Name="Invited" Relationship="LegalMSModel.FK_Invited_LegalPersonality" FromRole="LegalPersonality" ToRole="Invited" />
+          <NavigationProperty Name="Municipality" Relationship="LegalMSModel.FK_LegalPersonality_Municipality" FromRole="LegalPersonality" ToRole="Municipality" />
+          <NavigationProperty Name="Province" Relationship="LegalMSModel.FK_LegalPersonality_Provinces" FromRole="LegalPersonality" ToRole="Province" />
+        </EntityType>
+        <EntityType Name="Municipality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ProvinceRef" Nullable="false" />
+          <Property Type="Int32" Name="CityRef" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PostalCode" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="City" Relationship="LegalMSModel.FK_Municipality_City" FromRole="Municipality" ToRole="City" />
+          <NavigationProperty Name="Complainant" Relationship="LegalMSModel.FK_Complainant_Municipality" FromRole="Municipality" ToRole="Complainant" />
+          <NavigationProperty Name="Invited" Relationship="LegalMSModel.FK_Invited_Municipality" FromRole="Municipality" ToRole="Invited" />
+          <NavigationProperty Name="LegalDocument" Relationship="LegalMSModel.FK_LegalDocument_Municipality" FromRole="Municipality" ToRole="LegalDocument" />
+          <NavigationProperty Name="LegalPersonality" Relationship="LegalMSModel.FK_LegalPersonality_Municipality" FromRole="Municipality" ToRole="LegalPersonality" />
+          <NavigationProperty Name="Province" Relationship="LegalMSModel.FK_Municipality_Provinces" FromRole="Municipality" ToRole="Province" />
+          <NavigationProperty Name="Person" Relationship="LegalMSModel.FK_Person_Municipality" FromRole="Municipality" ToRole="Person" />
+          <NavigationProperty Name="Personnel" Relationship="LegalMSModel.FK_Personnel_Municipality" FromRole="Municipality" ToRole="Personnel" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NationalCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Mobile" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ProvinceRef" Nullable="false" />
+          <Property Type="Int32" Name="CityRef" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="OfficeRef" />
+          <NavigationProperty Name="Agent" Relationship="LegalMSModel.FK_Agent_Person" FromRole="Person" ToRole="Agent" />
+          <NavigationProperty Name="City" Relationship="LegalMSModel.FK_Person_City" FromRole="Person" ToRole="City" />
+          <NavigationProperty Name="Complainant" Relationship="LegalMSModel.FK_Complainant_Person" FromRole="Person" ToRole="Complainant" />
+          <NavigationProperty Name="Invited" Relationship="LegalMSModel.FK_Invited_Person" FromRole="Person" ToRole="Invited" />
+          <NavigationProperty Name="Municipality" Relationship="LegalMSModel.FK_Person_Municipality" FromRole="Person" ToRole="Municipality" />
+          <NavigationProperty Name="Province" Relationship="LegalMSModel.FK_Person_Provinces" FromRole="Person" ToRole="Province" />
+          <NavigationProperty Name="Personnel" Relationship="LegalMSModel.FK_Personnel_Person" FromRole="Person" ToRole="Personnel" />
+          <NavigationProperty Name="PersonnelPost" Relationship="LegalMSModel.FK_PersonnelPost_Person" FromRole="Person" ToRole="PersonnelPost" />
+          <NavigationProperty Name="User" Relationship="LegalMSModel.FK_User_Person" FromRole="Person" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Personnel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PersonRef" Nullable="false" />
+          <Property Type="Int32" Name="OfficeRef" Nullable="false" />
+          <NavigationProperty Name="InvolvedPersonnel" Relationship="LegalMSModel.FK_InvolvedPersonnel_Personnel" FromRole="Personnel" ToRole="InvolvedPersonnel" />
+          <NavigationProperty Name="Municipality" Relationship="LegalMSModel.FK_Personnel_Municipality" FromRole="Personnel" ToRole="Municipality" />
+          <NavigationProperty Name="Person" Relationship="LegalMSModel.FK_Personnel_Person" FromRole="Personnel" ToRole="Person" />
+          <NavigationProperty Name="PersonnelPost" Relationship="LegalMSModel.FK_PersonnelPost_Personnel" FromRole="Personnel" ToRole="PersonnelPost" />
+        </EntityType>
+        <EntityType Name="PersonnelPost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PersonRef" Nullable="false" />
+          <Property Type="Int32" Name="PostRef" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="LegalMSModel.FK_PersonnelPost_Person" FromRole="PersonnelPost" ToRole="Person" />
+          <NavigationProperty Name="Personnel" Relationship="LegalMSModel.FK_PersonnelPost_Personnel" FromRole="PersonnelPost" ToRole="Personnel" />
+          <NavigationProperty Name="Post" Relationship="LegalMSModel.FK_PersonnelPost_Post" FromRole="PersonnelPost" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PersonnelPost" Relationship="LegalMSModel.FK_PersonnelPost_Post" FromRole="Post" ToRole="PersonnelPost" />
+        </EntityType>
+        <EntityType Name="Province">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrefixCode" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="City" Relationship="LegalMSModel.FK_City_Provinces" FromRole="Province" ToRole="City" />
+          <NavigationProperty Name="Court" Relationship="LegalMSModel.FK_Court_Provinces" FromRole="Province" ToRole="Court" />
+          <NavigationProperty Name="LegalPersonality" Relationship="LegalMSModel.FK_LegalPersonality_Provinces" FromRole="Province" ToRole="LegalPersonality" />
+          <NavigationProperty Name="Municipality" Relationship="LegalMSModel.FK_Municipality_Provinces" FromRole="Province" ToRole="Municipality" />
+          <NavigationProperty Name="Person" Relationship="LegalMSModel.FK_Person_Provinces" FromRole="Province" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RoleAccess" Relationship="LegalMSModel.FK_RoleAccess_Role" FromRole="Role" ToRole="RoleAccess" />
+          <NavigationProperty Name="UserRole" Relationship="LegalMSModel.FK_UserRole_Role" FromRole="Role" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="RoleAccess">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="RoleRef" Nullable="false" />
+          <Property Type="String" Name="PageUrl" Nullable="false" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Role" Relationship="LegalMSModel.FK_RoleAccess_Role" FromRole="RoleAccess" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="InvolvedUnits" Relationship="LegalMSModel.FK_InvolvedUnits_Unit" FromRole="Unit" ToRole="InvolvedUnits" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pass" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PersonRef" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="LegalMSModel.FK_User_Person" FromRole="User" ToRole="Person" />
+          <NavigationProperty Name="UserRole" Relationship="LegalMSModel.FK_UserRole_User" FromRole="User" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserRef" Nullable="false" />
+          <Property Type="Int32" Name="RoleRef" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="LegalMSModel.FK_UserRole_Role" FromRole="UserRole" ToRole="Role" />
+          <NavigationProperty Name="User" Relationship="LegalMSModel.FK_UserRole_User" FromRole="UserRole" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Agent_Person">
+          <End Type="LegalMSModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="LegalMSModel.Agent" Role="Agent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Agent">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourtSession_Agent">
+          <End Type="LegalMSModel.Agent" Role="Agent" Multiplicity="1" />
+          <End Type="LegalMSModel.CourtSession" Role="CourtSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourtSession">
+              <PropertyRef Name="AgentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachement_LegalDocument">
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument" Multiplicity="1" />
+          <End Type="LegalMSModel.Attachement" Role="Attachement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Attachement">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalDocument_Category">
+          <End Type="LegalMSModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalDocument">
+              <PropertyRef Name="CategoryRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Provinces">
+          <End Type="LegalMSModel.Province" Role="Province" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LegalMSModel.City" Role="City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="ProvinceRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Court_City">
+          <End Type="LegalMSModel.City" Role="City" Multiplicity="1" />
+          <End Type="LegalMSModel.Court" Role="Court" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Court">
+              <PropertyRef Name="CityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalPersonality_City">
+          <End Type="LegalMSModel.City" Role="City" Multiplicity="1" />
+          <End Type="LegalMSModel.LegalPersonality" Role="LegalPersonality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalPersonality">
+              <PropertyRef Name="CityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Municipality_City">
+          <End Type="LegalMSModel.City" Role="City" Multiplicity="1" />
+          <End Type="LegalMSModel.Municipality" Role="Municipality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Municipality">
+              <PropertyRef Name="CityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_City">
+          <End Type="LegalMSModel.City" Role="City" Multiplicity="1" />
+          <End Type="LegalMSModel.Person" Role="Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="CityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complainant_LegalDocument">
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument" Multiplicity="1" />
+          <End Type="LegalMSModel.Complainant" Role="Complainant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complainant">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complainant_LegalPersonality">
+          <End Type="LegalMSModel.LegalPersonality" Role="LegalPersonality" Multiplicity="0..1" />
+          <End Type="LegalMSModel.Complainant" Role="Complainant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalPersonality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complainant">
+              <PropertyRef Name="LegalPersonalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complainant_Municipality">
+          <End Type="LegalMSModel.Municipality" Role="Municipality" Multiplicity="0..1" />
+          <End Type="LegalMSModel.Complainant" Role="Complainant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complainant">
+              <PropertyRef Name="MunicipalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complainant_Person">
+          <End Type="LegalMSModel.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="LegalMSModel.Complainant" Role="Complainant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complainant">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Court_Provinces">
+          <End Type="LegalMSModel.Province" Role="Province" Multiplicity="1" />
+          <End Type="LegalMSModel.Court" Role="Court" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Court">
+              <PropertyRef Name="ProvinceRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalDocument_Court">
+          <End Type="LegalMSModel.Court" Role="Court" Multiplicity="1" />
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Court">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalDocument">
+              <PropertyRef Name="CourtRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourtSession_LegalDocument">
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LegalMSModel.CourtSession" Role="CourtSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourtSession">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invited_LegalDocument">
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument" Multiplicity="1" />
+          <End Type="LegalMSModel.Invited" Role="Invited" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invited">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invited_LegalPersonality">
+          <End Type="LegalMSModel.LegalPersonality" Role="LegalPersonality" Multiplicity="0..1" />
+          <End Type="LegalMSModel.Invited" Role="Invited" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalPersonality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invited">
+              <PropertyRef Name="LegalPersonalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invited_Municipality">
+          <End Type="LegalMSModel.Municipality" Role="Municipality" Multiplicity="0..1" />
+          <End Type="LegalMSModel.Invited" Role="Invited" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invited">
+              <PropertyRef Name="MunicipalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invited_Person">
+          <End Type="LegalMSModel.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="LegalMSModel.Invited" Role="Invited" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invited">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvolvedPersonnel_LegalDocument">
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument" Multiplicity="1" />
+          <End Type="LegalMSModel.InvolvedPersonnel" Role="InvolvedPersonnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvolvedPersonnel">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvolvedPersonnel_Personnel">
+          <End Type="LegalMSModel.Personnel" Role="Personnel" Multiplicity="1" />
+          <End Type="LegalMSModel.InvolvedPersonnel" Role="InvolvedPersonnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personnel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvolvedPersonnel">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvolvedUnits_LegalDocument">
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument" Multiplicity="1" />
+          <End Type="LegalMSModel.InvolvedUnits" Role="InvolvedUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvolvedUnits">
+              <PropertyRef Name="LegalDocumentRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvolvedUnits_Unit">
+          <End Type="LegalMSModel.Unit" Role="Unit" Multiplicity="1" />
+          <End Type="LegalMSModel.InvolvedUnits" Role="InvolvedUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvolvedUnits">
+              <PropertyRef Name="UnitRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalDocument_LegalDocument">
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument" Multiplicity="0..1" />
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalDocument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalDocument1">
+              <PropertyRef Name="ParentDocRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalDocument_Municipality">
+          <End Type="LegalMSModel.Municipality" Role="Municipality" Multiplicity="1" />
+          <End Type="LegalMSModel.LegalDocument" Role="LegalDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalDocument">
+              <PropertyRef Name="MunicipalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalPersonality_Municipality">
+          <End Type="LegalMSModel.Municipality" Role="Municipality" Multiplicity="1" />
+          <End Type="LegalMSModel.LegalPersonality" Role="LegalPersonality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalPersonality">
+              <PropertyRef Name="MunicipalityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalPersonality_Provinces">
+          <End Type="LegalMSModel.Province" Role="Province" Multiplicity="1" />
+          <End Type="LegalMSModel.LegalPersonality" Role="LegalPersonality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LegalPersonality">
+              <PropertyRef Name="ProvinceRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Municipality_Provinces">
+          <End Type="LegalMSModel.Province" Role="Province" Multiplicity="1" />
+          <End Type="LegalMSModel.Municipality" Role="Municipality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Municipality">
+              <PropertyRef Name="ProvinceRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Municipality">
+          <End Type="LegalMSModel.Municipality" Role="Municipality" Multiplicity="0..1" />
+          <End Type="LegalMSModel.Person" Role="Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="OfficeRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personnel_Municipality">
+          <End Type="LegalMSModel.Municipality" Role="Municipality" Multiplicity="1" />
+          <End Type="LegalMSModel.Personnel" Role="Personnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personnel">
+              <PropertyRef Name="OfficeRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Provinces">
+          <End Type="LegalMSModel.Province" Role="Province" Multiplicity="1" />
+          <End Type="LegalMSModel.Person" Role="Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="ProvinceRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personnel_Person">
+          <End Type="LegalMSModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="LegalMSModel.Personnel" Role="Personnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personnel">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonnelPost_Person">
+          <End Type="LegalMSModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="LegalMSModel.PersonnelPost" Role="PersonnelPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonnelPost">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Person">
+          <End Type="LegalMSModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="LegalMSModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonnelPost_Personnel">
+          <End Type="LegalMSModel.Personnel" Role="Personnel" Multiplicity="1" />
+          <End Type="LegalMSModel.PersonnelPost" Role="PersonnelPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personnel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonnelPost">
+              <PropertyRef Name="PersonRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonnelPost_Post">
+          <End Type="LegalMSModel.Post" Role="Post" Multiplicity="1" />
+          <End Type="LegalMSModel.PersonnelPost" Role="PersonnelPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonnelPost">
+              <PropertyRef Name="PostRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleAccess_Role">
+          <End Type="LegalMSModel.Role" Role="Role" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LegalMSModel.RoleAccess" Role="RoleAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RoleAccess">
+              <PropertyRef Name="RoleRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_Role">
+          <End Type="LegalMSModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="LegalMSModel.UserRole" Role="UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="RoleRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_User">
+          <End Type="LegalMSModel.User" Role="User" Multiplicity="1" />
+          <End Type="LegalMSModel.UserRole" Role="UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="usp_GetLegalDocs_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Number" Nullable="false" MaxLength="30" />
+          <Property Type="DateTime" Name="PrepareDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="35" />
+          <Property Type="String" Name="WorkflueStatus" Nullable="false" MaxLength="35" />
+          <Property Type="Int32" Name="MunicipalityRef" Nullable="false" />
+          <Property Type="String" Name="Summary" Nullable="true" MaxLength="2000" />
+          <Property Type="DateTime" Name="AnnounceDate" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="CourtRoomDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="35" />
+          <Property Type="String" Name="CourtName" Nullable="true" MaxLength="35" />
+        </ComplexType>
+        <ComplexType Name="usp_getLegalPersonalities_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="ProvinceName" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="CityName" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="MunicipalityRef" Nullable="false" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="11" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LegalMSModelStoreContainer" CdmEntityContainer="LMSEntitiy">
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="LegalMSModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="LegalMSModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="LegalMSModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="LegalMSModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LegalMSModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="LegalMSModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LegalMSModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="LegalMSModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="LegalMSModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="usp_checkLogin1" FunctionName="LegalMSModel.Store.usp_checkLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LegalMSModel.usp_checkLogin1_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="PersonRef" ColumnName="PersonRef" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_checkLogin" FunctionName="LegalMSModel.Store.usp_checkLogin" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LegalMSModel.usp_checkLogin_Result1">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="PersonRef" ColumnName="PersonRef" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_getUserInfo" FunctionName="LegalMSModel.Store.usp_getUserInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LegalMSModel.usp_getUserInfo_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="uspGetPersons" FunctionName="LegalMSModel.Store.uspGetPersons">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LegalMSModel.uspGetPersons_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_getComplainantsInfo" FunctionName="LegalMSModel.Store.usp_getComplainantsInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LegalMSModel.usp_getComplainantsInfo_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="LegalPersonalityName" ColumnName="LegalPersonalityName" />
+                <ScalarProperty Name="MunicipalityName" ColumnName="MunicipalityName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Agent">
+            <EntityTypeMapping TypeName="LegalMSModel.Agent">
+              <MappingFragment StoreEntitySet="Agent">
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="PersonRef" ColumnName="PersonRef" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attachement">
+            <EntityTypeMapping TypeName="LegalMSModel.Attachement">
+              <MappingFragment StoreEntitySet="Attachement">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="LegalDocumentRef" ColumnName="LegalDocumentRef" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="LegalMSModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="LegalMSModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="ProvinceRef" ColumnName="ProvinceRef" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PrefixCode" ColumnName="PrefixCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Complainant">
+            <EntityTypeMapping TypeName="LegalMSModel.Complainant">
+              <MappingFragment StoreEntitySet="Complainant">
+                <ScalarProperty Name="LegalDocumentRef" ColumnName="LegalDocumentRef" />
+                <ScalarProperty Name="MunicipalityRef" ColumnName="MunicipalityRef" />
+                <ScalarProperty Name="LegalPersonalityRef" ColumnName="LegalPersonalityRef" />
+                <ScalarProperty Name="PersonRef" ColumnName="PersonRef" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Court">
+            <EntityTypeMapping TypeName="LegalMSModel.Court">
+              <MappingFragment StoreEntitySet="Court">
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CityRef" ColumnName="CityRef" />
+                <ScalarProperty Name="ProvinceRef" ColumnName="ProvinceRef" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourtSession">
+            <EntityTypeMapping TypeName="LegalMSModel.CourtSession">
+              <MappingFragment StoreEntitySet="CourtSession">
+                <ScalarProperty Name="ReconsiderVote" ColumnName="ReconsiderVote" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ProtestVerdictDate" ColumnName="ProtestVerdictDate" />
+                <ScalarProperty Name="FinalVerdictDate" ColumnName="FinalVerdictDate" />
+                <ScalarProperty Name="FinalVerdict" ColumnName="FinalVerdict" />
+                <ScalarProperty Name="ExpertVerdictAnnounceDate" ColumnName="ExpertVerdictAnnounceDate" />
+                <ScalarProperty Name="ExpertName" ColumnName="ExpertName" />
+                <ScalarProperty Name="RefereToExpertDate" ColumnName="RefereToExpertDate" />
+                <ScalarProperty Name="CourtDate" ColumnName="CourtDate" />
+                <ScalarProperty Name="AgentRef" ColumnName="AgentRef" />
+                <ScalarProperty Name="LegalDocumentRef" ColumnName="LegalDocumentRef" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invited">
+            <EntityTypeMapping TypeName="LegalMSModel.Invited">
+              <MappingFragment StoreEntitySet="Invited">
+                <ScalarProperty Name="LegalDocumentRef" ColumnName="LegalDocumentRef" />
+                <ScalarProperty Name="MunicipalityRef" ColumnName="MunicipalityRef" />
+                <ScalarProperty Name="LegalPersonalityRef" ColumnName="LegalPersonalityRef" />
+                <ScalarProperty Name="PersonRef" ColumnName="PersonRef" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvolvedPersonnel">
+            <EntityTypeMapping TypeName="LegalMSModel.InvolvedPersonnel">
+              <MappingFragment StoreEntitySet="InvolvedPersonnel">
+                <ScalarProperty Name="LegalDocumentRef" ColumnName="LegalDocumentRef" />
+                <ScalarProperty Name="PersonRef" ColumnName="PersonRef" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvolvedUnits">
+            <EntityTypeMapping TypeName="LegalMSModel.InvolvedUnits">
+              <MappingFragment StoreEntitySet="InvolvedUnits">
+                <ScalarProperty Name="LegalDocumentRef" ColumnName="LegalDocumentRef" />
+                <ScalarProperty Name="UnitRef" ColumnName="UnitRef" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LegalDocument">
+            <EntityTypeMapping TypeName="LegalMSModel.LegalDocument">
+              <MappingFragment StoreEntitySet="LegalDocument">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="CategoryRef" ColumnName="CategoryRef" />
+                <ScalarProperty Name="AnnounceToAgentDate" ColumnName="AnnounceToAgentDate" />
+                <ScalarProperty Name="AnnounceNo" ColumnName="AnnounceNo" />
+                <ScalarProperty Name="CourtRoomDate" ColumnName="CourtRoomDate" />
+                <ScalarProperty Name="IndicatorRegisterDate" ColumnName="IndicatorRegisterDate" />
+                <ScalarProperty Name="Reciever" ColumnName="Reciever" />
+                <ScalarProperty Name="ParentDocRef" ColumnName="ParentDocRef" />
+                <ScalarProperty Name="Confirmer" ColumnName="Confirmer" />
+                <ScalarProperty Name="AnnounceDate" ColumnName="AnnounceDate" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="CourtRef" ColumnName="CourtRef" />
+                <ScalarProperty Name="MunicipalityRef" ColumnName="MunicipalityRef" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="WorkflueStatus" ColumnName="WorkflueStatus" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ArchiveNo" ColumnName="ArchiveNo" />
+                <ScalarProperty Name="PrepareDate" ColumnName="PrepareDate" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LegalPersonality">
+            <EntityTypeMapping TypeName="LegalMSModel.LegalPersonality">
+              <MappingFragment StoreEntitySet="LegalPersonality">
+                <ScalarProperty Name="MunicipalityRef" ColumnName="MunicipalityRef" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CityRef" ColumnName="CityRef" />
+                <ScalarProperty Name="ProvinceRef" ColumnName="ProvinceRef" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipality">
+            <EntityTypeMapping TypeName="LegalMSModel.Municipality">
+              <MappingFragment StoreEntitySet="Municipality">
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CityRef" ColumnName="CityRef" />
+                <ScalarProperty Name="ProvinceRef" ColumnName="ProvinceRef" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person">
+            <EntityTypeMapping TypeName="LegalMSModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="OfficeRef" ColumnName="OfficeRef" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CityRef" ColumnName="CityRef" />
+                <ScalarProperty Name="ProvinceRef" ColumnName="ProvinceRef" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personnel">
+            <EntityTypeMapping TypeName="LegalMSModel.Personnel">
+              <MappingFragment StoreEntitySet="Personnel">
+                <ScalarProperty Name="OfficeRef" ColumnName="OfficeRef" />
+                <ScalarProperty Name="PersonRef" ColumnName="PersonRef" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonnelPost">
+            <EntityTypeMapping TypeName="LegalMSModel.PersonnelPost">
+              <MappingFragment StoreEntitySet="PersonnelPost">
+                <ScalarProperty Name="PostRef" ColumnName="PostRef" />
+                <ScalarProperty Name="PersonRef" ColumnName="PersonRef" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Post">
+            <EntityTypeMapping TypeName="LegalMSModel.Post">
+              <MappingFragment StoreEntitySet="Post">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Province">
+            <EntityTypeMapping TypeName="LegalMSModel.Province">
+              <MappingFragment StoreEntitySet="Province">
+                <ScalarProperty Name="PrefixCode" ColumnName="PrefixCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="LegalMSModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleAccess">
+            <EntityTypeMapping TypeName="LegalMSModel.RoleAccess">
+              <MappingFragment StoreEntitySet="RoleAccess">
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+                <ScalarProperty Name="RoleRef" ColumnName="RoleRef" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LegalMSModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unit">
+            <EntityTypeMapping TypeName="LegalMSModel.Unit">
+              <MappingFragment StoreEntitySet="Unit">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="LegalMSModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="PersonRef" ColumnName="PersonRef" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRole">
+            <EntityTypeMapping TypeName="LegalMSModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="RoleRef" ColumnName="RoleRef" />
+                <ScalarProperty Name="UserRef" ColumnName="UserRef" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetLegalDocs" FunctionName="LegalMSModel.Store.usp_GetLegalDocs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LegalMSModel.usp_GetLegalDocs_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="PrepareDate" ColumnName="PrepareDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="WorkflueStatus" ColumnName="WorkflueStatus" />
+                <ScalarProperty Name="MunicipalityRef" ColumnName="MunicipalityRef" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="AnnounceDate" ColumnName="AnnounceDate" />
+                <ScalarProperty Name="CourtRoomDate" ColumnName="CourtRoomDate" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CourtName" ColumnName="CourtName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_getLegalPersonalities" FunctionName="LegalMSModel.Store.usp_getLegalPersonalities">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LegalMSModel.usp_getLegalPersonalities_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="MunicipalityRef" ColumnName="MunicipalityRef" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_insertAttachement" FunctionName="LegalMSModel.Store.usp_insertAttachement" />
+          <FunctionImportMapping FunctionImportName="usp_insertCompainant" FunctionName="LegalMSModel.Store.usp_insertCompainant" />
+          <FunctionImportMapping FunctionImportName="usp_insertLegalPersonality" FunctionName="LegalMSModel.Store.usp_insertLegalPersonality" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

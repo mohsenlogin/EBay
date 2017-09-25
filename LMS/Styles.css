@@ -1,0 +1,159 @@
+﻿
+        tiny
+        {
+            font-family:'DefaultFont, BYekan, DefaultFont' ;
+            font-size:14px;
+            border-radius:6px;
+        }
+        .roundCorners
+        {
+            border: 3px solid black;
+            -webkit-border-radius: 10px;
+              -moz-border-radius: 10px;
+              border-radius: 10px;
+              overflow: hidden;
+        }
+               .bigControls{
+            height:30px;
+            font-size:14px;
+            width:300px;
+            font-family:DefaultFont,BYekan;
+            color:#0099CC;
+            height:50px;
+            border:none;
+            border-radius:6px;
+        } 
+                  .bigControlsWithBorder{
+            height:30px;
+            font-size:14px;
+            width:300px;
+            font-family:DefaultFont, BYekan, Tahoma;
+            color:#0099CC;
+            height:50px;
+            border:solid;
+            border-width:2px;
+            border-color:black;
+            border-radius:8px;
+        }
+                .bigControlsBold{
+            height:30px;
+            font-size:14px;
+            width:300px;
+            font-family:DefaultFont, BYekan, Tahoma;
+            color:orange;
+        }
+        .bigButton
+        {
+            height:50px;
+            background-color:#0099CC;
+            color:white;
+            border:none;
+            font-family:DefaultFont, BYekan, Tahoma;
+            font-weight:bold;
+            width:70px;
+            border-radius:6px;
+            border:none;
+        }
+        .labels {
+            width: 85px;
+        }
+
+        .largStyle {
+            font-family: DefaultFont, BYekan, Tahoma;
+            font-size: 14px;
+            height:30px;
+        }
+        .tableLabels
+        {
+            text-align:left;
+            vertical-align:middle;
+            width:200px;
+        }
+        .formControls
+        {
+            vertical-align:middle;
+            text-align:center;
+            font-family:DefaultFont;
+        }
+        .BigTitle {
+            border-color: whitesmoke;
+            /*border: solid;
+            border-width: 1px;*/
+            padding: 15px;
+            color: navajowhite;
+            text-align:center;
+            border-radius:15px;
+        }
+
+        .noUnderLine {
+            text-decoration: none;
+        }
+
+        @font-face {
+            font-family: 'BYekan';
+            src: url('../BYekan.eot?#') format('eot'), url('../BYekan.woff') format('woff'), url('../BYekan.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'DefaultFont';
+            src: url('../fonts/Gandom.eot?#') format('eot'), url('../fonts/Gandom.woff') format('woff'), url('../fonts/Gandom.ttf') format('truetype');
+        }
+         @font-face {
+            font-family: 'WebVazir';
+            src: url('../fonts/Vazir.eot?#') format('eot'), url('../fonts/Vazir.woff') format('woff'), url('../fonts/Vazir.ttf') format('truetype');
+        }
+        .headerStyle
+        {
+            height: 178px;
+            width: 790px;
+        }
+        .validationErrors
+        {
+            color:red;
+            text-align:right;
+        }
+        .links
+        {
+            color:aliceblue;
+            text-decoration-color:gold;
+        }
+        .squareButton
+        {
+            width: 85px;
+            height:85px;
+            background-color:#0099CC;
+            background:#0099CC;
+            border:none;
+            color:white;
+            font-family:DefaultFont ;
+            font-weight:bold;
+            border-radius:6px;
+            border-width:0px;
+        }
+        a.squareButton:hover
+        {
+            color:red;
+        }
+        a.squareButton
+        {
+            color:white;
+            text-decoration:none;
+        }
+
+        .dropdowns
+        {
+            height:40px;
+        }
+        .centerize
+        {
+            text-align:center;
+        }
+        .roundCorner
+        {
+            border-radius:10px;
+        }
+        .topCornerRound
+        {
+            border-top-left-radius:10px;
+            border-top-right-radius:10px;
+        }
+ 

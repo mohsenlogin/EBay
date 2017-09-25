@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#"  AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LMS.Site" %>
+ <!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - سامانه مدیریت پرونده های حقوقی</title>
+     <!-- <asp:PlaceHolder ID="PlaceHolder1" runat="server"> -->
+      <!--  < % : Scripts.Render("~/bundles/modernizr") % > -->
+   <!--  </asp:PlaceHolder>  -->
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/css" /> 
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/PersianDatePicker.min.js"></script>
+    <link href="~/Content/PersianDatePicker.min.css" rel="stylesheet" />
+    <script>        
+        $.ready(function () { $('body').fadeIn("slow"); });
+    </script>
+    <asp:Contentplaceholder runat="server" ID="HeadContent"></asp:Contentplaceholder>
+     <link rel="stylesheet" href="Styles.css" type="text/css" />
+    
+</head>
+    <body style="direction:rtl;font-family:'DefaultFont'; font-size:15px;">
+        <form runat="server">       
+               <center>
+        <img alt="" class="headerStyle" src="../Images/HeaderLMS.jpg"  /> 
+         <table style="vertical-align:middle; width:100%; text-align:center;" ><tr><td>  <img src="../Images/user.png" width="20" style="vertical-align:middle;" />
+        <asp:Label runat="server" ID="lblLoginText" Text="کاربر مهمان لطفاً وارد سیستم شوید" Font-Bold="True"></asp:Label>
+            <asp:Label runat="server" ID="lblUserInfo" Visible="False" Font-Italic="True" Font-Size="X-Small"></asp:Label>
+        <asp:LinkButton ID="lbtnLoginLogout" runat="server" Text="ورود به سامانه" OnClick="lbtnLoginLogout_Click" CssClass="links" CausesValidation="False"></asp:LinkButton>
+             </td></tr></table> 
+                   
+         <table style="vertical-align:middle" runat="server" id="tblNavigationMenu"><tr style="height:50px; text-align:center">
+            <td id="tdHome" onmouseover="document.getElementById('tdHome').style.backgroundColor = 'gold'"
+                onmouseout="document.getElementById('tdHome').style.backgroundColor = 'white'" class="roundCorner" ><a href="Default.aspx" class="noUnderLine"><img style="height:45px;vertical-align:middle" src="../Images/home.png" class="noUnderLine" /> صفحه اصلی</a></td>
+            <td id="tdManagePersonMaster" onmouseover="document.getElementById('tdManagePersonMaster').style.backgroundColor = 'gold'"
+                onmouseout="document.getElementById('tdManagePersonMaster').style.backgroundColor = 'white'"  class="roundCorner">
+                <a href="#" class="noUnderLine"><img style="height:45px;vertical-align:middle"  src="../Images/user2.png" /> تعریف و مدیریت کاربران</a></td>
+                <td id="tdManageLegalDocMaster" onmouseover="document.getElementById('tdManageLegalDocMaster').style.backgroundColor = 'gold'"
+                 onmouseout="document.getElementById('tdManageLegalDocMaster').style.backgroundColor = 'white'"  class="roundCorner">
+                    <a href="LegalDocs.aspx" class="noUnderLine"><img style="height:45px;vertical-align:middle"  src="../Images/archive.png" class="noUnderLine" />مشاهده پرونده های پیشین</a></td>
+          
+               </tr>
+        </table>        
+        </center>
+        <asp:Contentplaceholder runat="server" ID="cphMain"></asp:Contentplaceholder>
+        
+        <div style="text-align:center; font-family:DefaultFont;font-size:10px;height:50px;"><asp:ScriptManager ID="ScriptManager1" runat="server">
+           
+        <Scripts>
+            <%--Framework Scripts--%>
+            <asp:ScriptReference Name="MsAjaxBundle" />
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+            <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+            <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+            <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+            <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+            <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+            <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+            <asp:ScriptReference Name="WebFormsBundle" />
+            <%--Site Scripts--%>
+
+        </Scripts>
+    </asp:ScriptManager>   
+            <a href="http://ostandari-zn.ir/m22_d1/%D8%B5%D9%81%D8%AD%D9%87%D8%A7%D8%B5%D9%84%DB%8C.aspx">
+            دفتر امور شهر و شوراهای</a>  <a href="http://www.ostandari-zn.ir">استانداری زنجان</a> </div>
+   </form>
+             </body>
+    </html>
+
+
+

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="160c42b21bbb46f2be1fb55d6317408c" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="LegalMSModel.Agent" Width="1.5" PointX="10.465988214344712" PointY="24.819209572309259" />
+        <EntityTypeShape EntityType="LegalMSModel.Attachement" Width="1.5" PointX="8.30693477965283" PointY="1.4625813520804891" />
+        <EntityTypeShape EntityType="LegalMSModel.Category" Width="1.5" PointX="4.3751557508367842" PointY="8.7254934947590783" />
+        <EntityTypeShape EntityType="LegalMSModel.City" Width="1.5" PointX="3.40218683304367" PointY="23.733581255997336" />
+        <EntityTypeShape EntityType="LegalMSModel.Complainant" Width="1.5" PointX="7.5105467455045067" PointY="1.8693453380229628" />
+        <EntityTypeShape EntityType="LegalMSModel.Court" Width="1.5" PointX="5.1377859605186558" PointY="31.510579153667475" />
+        <EntityTypeShape EntityType="LegalMSModel.CourtSession" Width="1.5" PointX="11.249494369723598" PointY="26.136620816838285" />
+        <EntityTypeShape EntityType="LegalMSModel.Invited" Width="1.5" PointX="0.596475184241531" PointY="24.379295747903779" />
+        <EntityTypeShape EntityType="LegalMSModel.InvolvedPersonnel" Width="1.5" PointX="1.9799752524029348" PointY="12.380398189826122" />
+        <EntityTypeShape EntityType="LegalMSModel.InvolvedUnits" Width="1.5" PointX="1.1772834850369409" PointY="3.6260535435872403" />
+        <EntityTypeShape EntityType="LegalMSModel.LegalDocument" Width="1.5" PointX="4.1177863404703263" PointY="4.8293546758728825" />
+        <EntityTypeShape EntityType="LegalMSModel.LegalPersonality" Width="1.5" PointX="3.7437411787657728" PointY="17.495572798650514" />
+        <EntityTypeShape EntityType="LegalMSModel.Municipality" Width="1.5" PointX="3.9404587465992469" PointY="18.130542987087065" />
+        <EntityTypeShape EntityType="LegalMSModel.Person" Width="1.5" PointX="8.5246420579611524" PointY="11.881441866923796" />
+        <EntityTypeShape EntityType="LegalMSModel.Personnel" Width="1.5" PointX="10.612767464766636" PointY="7.0628964933859635" />
+        <EntityTypeShape EntityType="LegalMSModel.PersonnelPost" Width="1.5" PointX="9.6322344772667776" PointY="5.3852460707469128" />
+        <EntityTypeShape EntityType="LegalMSModel.Post" Width="1.5" PointX="5.4297246250462372" PointY="15.395307786481133" />
+        <EntityTypeShape EntityType="LegalMSModel.Province" Width="1.5" PointX="3.6792555151876321" PointY="2.3903187077447394" />
+        <EntityTypeShape EntityType="LegalMSModel.Role" Width="1.5" PointX="5.0553920758214739" PointY="7.7052819913743447" />
+        <EntityTypeShape EntityType="LegalMSModel.RoleAccess" Width="1.5" PointX="4.2176215016365148" PointY="30.46231175887506" />
+        <EntityTypeShape EntityType="LegalMSModel.sysdiagrams" Width="1.5" PointX="11.713060051069157" PointY="27.345199910618923" />
+        <EntityTypeShape EntityType="LegalMSModel.Unit" Width="1.5" PointX="0.71584924902573654" PointY="20.29080663076174" />
+        <EntityTypeShape EntityType="LegalMSModel.User" Width="1.5" PointX="5.6020497761676324" PointY="13.711747965641202" />
+        <EntityTypeShape EntityType="LegalMSModel.UserRole" Width="1.5" PointX="0.7033512278941233" PointY="22.13001513021533" />
+        <AssociationConnector Association="LegalMSModel.FK_Agent_Person" />
+        <AssociationConnector Association="LegalMSModel.FK_CourtSession_Agent" />
+        <AssociationConnector Association="LegalMSModel.FK_Attachement_LegalDocument" />
+        <AssociationConnector Association="LegalMSModel.FK_LegalDocument_Category" />
+        <AssociationConnector Association="LegalMSModel.FK_City_Provinces" />
+        <AssociationConnector Association="LegalMSModel.FK_Court_City" />
+        <AssociationConnector Association="LegalMSModel.FK_LegalPersonality_City" />
+        <AssociationConnector Association="LegalMSModel.FK_Municipality_City" />
+        <AssociationConnector Association="LegalMSModel.FK_Person_City" />
+        <AssociationConnector Association="LegalMSModel.FK_Complainant_LegalDocument" />
+        <AssociationConnector Association="LegalMSModel.FK_Complainant_LegalPersonality" />
+        <AssociationConnector Association="LegalMSModel.FK_Complainant_Municipality" />
+        <AssociationConnector Association="LegalMSModel.FK_Complainant_Person" />
+        <AssociationConnector Association="LegalMSModel.FK_Court_Provinces" />
+        <AssociationConnector Association="LegalMSModel.FK_LegalDocument_Court" />
+        <AssociationConnector Association="LegalMSModel.FK_CourtSession_LegalDocument" />
+        <AssociationConnector Association="LegalMSModel.FK_Invited_LegalDocument" />
+        <AssociationConnector Association="LegalMSModel.FK_Invited_LegalPersonality" />
+        <AssociationConnector Association="LegalMSModel.FK_Invited_Municipality" />
+        <AssociationConnector Association="LegalMSModel.FK_Invited_Person" />
+        <AssociationConnector Association="LegalMSModel.FK_InvolvedPersonnel_LegalDocument" />
+        <AssociationConnector Association="LegalMSModel.FK_InvolvedPersonnel_Personnel" />
+        <AssociationConnector Association="LegalMSModel.FK_InvolvedUnits_LegalDocument" />
+        <AssociationConnector Association="LegalMSModel.FK_InvolvedUnits_Unit" />
+        <AssociationConnector Association="LegalMSModel.FK_LegalDocument_LegalDocument" />
+        <AssociationConnector Association="LegalMSModel.FK_LegalDocument_Municipality" />
+        <AssociationConnector Association="LegalMSModel.FK_LegalPersonality_Municipality" />
+        <AssociationConnector Association="LegalMSModel.FK_LegalPersonality_Provinces" />
+        <AssociationConnector Association="LegalMSModel.FK_Municipality_Provinces" />
+        <AssociationConnector Association="LegalMSModel.FK_Person_Municipality" />
+        <AssociationConnector Association="LegalMSModel.FK_Personnel_Municipality" />
+        <AssociationConnector Association="LegalMSModel.FK_Person_Provinces" />
+        <AssociationConnector Association="LegalMSModel.FK_Personnel_Person" />
+        <AssociationConnector Association="LegalMSModel.FK_PersonnelPost_Person" />
+        <AssociationConnector Association="LegalMSModel.FK_User_Person" />
+        <AssociationConnector Association="LegalMSModel.FK_PersonnelPost_Personnel" />
+        <AssociationConnector Association="LegalMSModel.FK_PersonnelPost_Post" />
+        <AssociationConnector Association="LegalMSModel.FK_RoleAccess_Role" />
+        <AssociationConnector Association="LegalMSModel.FK_UserRole_Role" />
+        <AssociationConnector Association="LegalMSModel.FK_UserRole_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
